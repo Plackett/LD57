@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=4 uid="uid://derx1lcmi0rha"]
+
+[ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_rus8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
+size = Vector2(58, 280)
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_bswci")]
+tile_map_data = PackedByteArray("AAD+/wEAAAABAAAAAAAAAAEAAAABAAAAAAAGAAEAAAABAAAAAAAIAAEAAAACAAIAAAAKAP3/AAABAAAAAAAMAP3/AAABAAAAAAAOAP3/AAABAAAAAAAQAP3/AAABAAAAAAASAP3/AAABAAAAAAAUAP3/AAABAAAAAAAWAP3/AAABAAAAAAAYAP3/AAABAAAAAAAaAP3/AAABAAAAAAAaAPr/AAADAAAAAAACAP//AAAEAAEAAAD6/wEAAAABAAAAAAD4/wEAAAABAAAAAAD2/wEAAAABAAAAAAD0/wEAAAABAAAAAADy/wEAAAAAAAAAAAD8/wEAAAABAAAAAAAIAP3/AAAAAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAAIAP//AAAAAAEAAAA=")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_rus8k")]
+position = Vector2(-49, 7)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(49, -7)
+zoom = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-261, -75)
+shape = SubResource("RectangleShape2D_bswci")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(469, -72)
+shape = SubResource("RectangleShape2D_bswci")
