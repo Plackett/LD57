@@ -12,8 +12,9 @@ func _on_jump_height_timer_timeout():
 	if !Input.is_action_pressed("ui_accept"): # If Spacebar is not being pressed
 		if velocity.y < -80:
 			velocity.y = -80
+			print("Low Jump")
 	else:
-		print("High jump")
+		print("Normal Jump")
 
 # This represents the player's inertia.
 var push_force = 80.0
