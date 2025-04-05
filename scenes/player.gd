@@ -16,6 +16,7 @@ func _on_jump_height_timer_timeout():
 	else:
 		print("Normal Jump")
 
+
 # This represents the player's inertia.
 var push_force = 80.0
 
