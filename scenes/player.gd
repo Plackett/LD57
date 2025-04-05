@@ -4,6 +4,19 @@ extends CharacterBody2D
 const SPEED = 250.0
 const JUMP_VELOCITY = -370.0
 
+# Reference to the timer
+@onready var jump_height_timer = $JumpHeightTimer
+
+func _on_jump_height_timer_timeout():
+	# Checks if the space bar is still being held down
+	if !Input.is_action_pressed("ui_accept"): # If Spacebar is not being pressed
+		if velocity.y < -80:
+			velocity.y = -80
+			print("Low Jump")
+	else:
+		print("Normal Jump")
+
+
 # This represents the player's inertia.
 var push_force = 80.0
 
@@ -22,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		jump_height_timer.start()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

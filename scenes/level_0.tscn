@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=4 uid="uid://kxd12jgduqgt"]
+
+[ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_rerym"]
+[ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_uijja"]
+[ext_resource type="PackedScene" uid="uid://cxjbwd3guguet" path="res://pushblock.tscn" id="3_5nv5w"]
+[ext_resource type="PackedScene" uid="uid://c5b12oi2g6knw" path="res://scenes/door.tscn" id="4_uijja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
+size = Vector2(58, 280)
+
+[node name="Level0" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_rerym")]
+tile_map_data = PackedByteArray("AAD+/wEAAAABAAAAAAAAAAEAAAABAAAAAAAGAAEAAAABAAAAAAAIAAEAAAACAAIAAAAKAP3/AAABAAAAAAAMAP3/AAABAAAAAAAOAP3/AAABAAAAAAAQAP3/AAABAAAAAAASAP3/AAABAAAAAAAUAP3/AAABAAAAAAAWAP3/AAABAAAAAAAYAP3/AAABAAAAAAAaAP3/AAABAAAAAAD6/wEAAAABAAAAAAD4/wEAAAABAAAAAAD2/wEAAAABAAAAAAD0/wEAAAABAAAAAADy/wEAAAAAAAAAAAD8/wEAAAABAAAAAAAIAP3/AAAAAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAAIAP//AAAAAAEAAAAcAP3/AAABAAAAAAAeAP3/AAABAAAAAAAgAP3/AAABAAAAAAAiAP3/AAABAAAAAAAkAP3/AAABAAAAAAAmAP3/AAABAAAAAAAoAP3/AAABAAAAAAAqAP3/AAABAAAAAAAsAP3/AAABAAAAAAAuAP3/AAABAAAAAAAwAP3/AAABAAAAAAAyAP3/AAACAAIAAAAyAPv/AAACAAEAAAAyAPn/AAACAAEAAAAyAPf/AAACAAEAAAAYAPf/AAAAAAAAAAAaAPf/AAABAAAAAAAcAPf/AAABAAAAAAAeAPf/AAABAAAAAAAgAPf/AAABAAAAAAAiAPf/AAABAAAAAAAkAPf/AAABAAAAAAAmAPf/AAABAAAAAAAoAPf/AAABAAAAAAAqAPf/AAABAAAAAAAsAPf/AAACAAAAAAAcAPH/AAAAAAAAAAAeAPH/AAABAAAAAAAgAPH/AAABAAAAAAAiAPH/AAABAAAAAAAkAPH/AAABAAAAAAAmAPH/AAABAAAAAAAoAPH/AAACAAAAAAAeAOv/AAABAAIAAAAgAOn/AAAAAAAAAAAgAOv/AAACAAIAAAAiAOn/AAABAAAAAAAkAOn/AAACAAAAAAAkAOv/AAAAAAIAAAAmAOv/AAABAAIAAAAwAPn/AAABAAAAAAAsAPP/AAABAAAAAAA=")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-261, -75)
+shape = SubResource("RectangleShape2D_bswci")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(820, -292)
+shape = SubResource("RectangleShape2D_bswci")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_5nv5w")]
+position = Vector2(338, -84)
+mass = 3.897
+lock_rotation = true
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_uijja")]
+position = Vector2(-50, 4)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+zoom = Vector2(2, 2)
+
+[node name="Area2D" parent="." instance=ExtResource("4_uijja")]
+position = Vector2(457, -57)
