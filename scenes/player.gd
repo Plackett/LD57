@@ -4,6 +4,16 @@ extends CharacterBody2D
 const SPEED = 250.0
 const JUMP_VELOCITY = -370.0
 
+# This represents the player's inertia.
+var push_force = 80.0
+
+func _apply_impulses():
+	# after calling move_and_slide()
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,5 +31,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	move_and_slide()
+	_apply_impulses()

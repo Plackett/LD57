@@ -22,7 +22,6 @@ texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9175, -16.0074, 16.0974, -16.1873, 15.9175, 16.1873, -16.0974, 16.0074)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9175, -16.0074, 16.0974, -16.1873, 15.9175, 16.1873, -16.0974, 16.0074)
 5:1/0 = 0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9175, -16.0074, 16.0974, -16.1873, 15.9175, 16.1873, -16.0974, 16.0074)
 8:1/0 = 0
@@ -93,6 +92,13 @@ texture_region_size = Vector2i(32, 32)
 3:0/size_in_atlas = Vector2i(1, 2)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9175, -32.1947, 15.9175, -32.0149, 15.7376, 32.5544, -15.7376, 32.1947)
+7:11/0 = 0
+7:10/0 = 0
+6:9/0 = 0
+6:8/0 = 0
+6:7/0 = 0
+6:6/0 = 0
+7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jy7pm"]
 physics_layer_0/collision_layer = 1
