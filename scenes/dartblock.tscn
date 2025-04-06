@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ewjicq6e0j5"]
+
+[ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_e5eh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i665g"]
+size = Vector2(32, 32)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -9)
+shape = SubResource("RectangleShape2D_i665g")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_e5eh6")]
+position = Vector2(-2, -17)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0)
