@@ -4,6 +4,7 @@ var lever_on = false # Detects the level
 
 
 func _on_body_entered(body: Node2D) -> void: # Toggles a True or False Boolean
+	if not body.is_in_group("LeverTrigger"): return
 	lever_on = not lever_on
 	_level_check()
 

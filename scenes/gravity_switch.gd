@@ -1,7 +1,7 @@
 extends Node
 
 func activate():
-	ProjectSettings.set_setting("physics/2d/default_gravity", -9.8)
+	PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.UP)
 
 func deactivate():
-	ProjectSettings.set_setting("physics/2d/default_gravity", 9.8)
+	PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
