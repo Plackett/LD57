@@ -142,7 +142,7 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="door" type="Area2D"]
 script = ExtResource("1_hpvv5")
 metadata/newScene = "res://scenes/level_1.tscn"
 metadata/levelOrPos = false
