@@ -10,3 +10,4 @@ func _process(delta: float) -> void:
 	timer = 0.0
 	var arrowInstance = arrow.instantiate()
 	arrowInstance.global_position = global_position
+	get_parent().add_child(arrowInstance)
