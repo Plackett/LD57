@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://kxd12jgduqgt"]
+[gd_scene load_steps=10 format=4 uid="uid://kxd12jgduqgt"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_rerym"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_uijja"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://duhvmkg2akdrk" path="res://assets/textures/templebottom1.png" id="5_xp8tn"]
 [ext_resource type="Texture2D" uid="uid://b7pcbohaeq1fd" path="res://assets/textures/templebottom2.png" id="6_rhhhf"]
 [ext_resource type="PackedScene" uid="uid://dbe03ote7nom3" path="res://scenes/pushblock.tscn" id="6_xp8tn"]
+[ext_resource type="AudioStream" uid="uid://byebpic6el43y" path="res://assets/bgm/bgm-1.wav" id="7_qjcqe"]
+[ext_resource type="Script" uid="uid://b4ogdc0c4upb8" path="res://scripts/loop.gd" id="8_jv3i5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
 size = Vector2(319, 260)
@@ -85,3 +87,10 @@ position = Vector2(451.457, 214.752)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("6_xp8tn")]
 position = Vector2(-4, -10)
+
+[node name="Bgm-1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qjcqe")
+autoplay = true
+script = ExtResource("8_jv3i5")
+
+[connection signal="finished" from="Bgm-1" to="Bgm-1" method="_on_finished"]

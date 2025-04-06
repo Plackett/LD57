@@ -22,5 +22,5 @@ func _on_body_exited(body: Node2D) -> void:
 	if(not body.is_class("CharacterBody2D")):
 		return
 	$AnimatedSprite2D.visible = false
-	$Sprite2D.texture = load("res://assets/door1.png")
+	$Sprite2D.texture = load("res://assets/textures/door1.png")
 	accepting = false
