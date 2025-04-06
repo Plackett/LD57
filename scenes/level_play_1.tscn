@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://c8i0ufc30bg4p"]
+[gd_scene load_steps=7 format=4 uid="uid://c8i0ufc30bg4p"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_olh1y"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_wb0lr"]
 [ext_resource type="PackedScene" uid="uid://bdowlnpsjb37j" path="res://button.tscn" id="3_jukus"]
 [ext_resource type="PackedScene" uid="uid://cxjbwd3guguet" path="res://pushblock.tscn" id="4_658kb"]
+[ext_resource type="PackedScene" uid="uid://c5b12oi2g6knw" path="res://scenes/door.tscn" id="5_7ot2a"]
+[ext_resource type="PackedScene" uid="uid://0kcqtx00fl3v" path="res://scenes/Lever.tscn" id="6_7gbal"]
 
 [node name="Level_Play1" type="Node2D"]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_olh1y")]
-tile_map_data = PackedByteArray("AAAAAAEAAAABAAAAAAD+/wEAAAABAAAAAAD8/wEAAAABAAAAAAD6/wEAAAABAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAAGAAEAAAABAAAAAAAIAAEAAAACAAAAAAAMAAEAAAAAAAAAAAAOAAEAAAABAAAAAAAQAAEAAAABAAAAAAASAAEAAAABAAAAAAAUAAEAAAABAAAAAAAWAAEAAAABAAAAAAAWAP7/AAADAAAAAAAIAAMAAAACAAEAAAAKAAMAAAABAAAAAAAMAAMAAAAAAAEAAAD4////AAACAAEAAAD4/wEAAAACAAEAAAD4//3/AAACAAAAAAD2//3/AAABAAAAAAD0//3/AAABAAAAAADy//3/AAABAAAAAADw//v/AAACAAEAAADw//n/AAACAAEAAADw//3/AAABAAAAAADw//f/AAACAAEAAADw//X/AAACAAEAAAAYAP//AAAAAAEAAAAYAP3/AAAAAAEAAAAYAPv/AAAAAAEAAAAYAPn/AAAAAAEAAAAYAPf/AAAAAAEAAAAYAPX/AAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEAAAABAAAAAAD+/wEAAAABAAAAAAD8/wEAAAABAAAAAAD6/wEAAAABAAAAAAACAAEAAAABAAAAAAAEAAEAAAABAAAAAAAGAAEAAAABAAAAAAAIAAEAAAACAAAAAAAMAAEAAAAAAAAAAAAOAAEAAAABAAAAAAASAAEAAAABAAAAAAAUAAEAAAABAAAAAAAWAAEAAAABAAAAAAAWAP7/AAADAAAAAAAIAAMAAAACAAEAAAAKAAMAAAABAAAAAAAMAAMAAAAAAAEAAAD4////AAACAAEAAAD4/wEAAAACAAEAAAD4//3/AAACAAAAAAD2//3/AAABAAAAAAD0//3/AAABAAAAAADy//3/AAABAAAAAADw//v/AAACAAEAAADw//n/AAACAAEAAADw//3/AAABAAAAAADw//f/AAACAAEAAADw//X/AAACAAEAAAAYAP//AAAAAAEAAAAYAP3/AAAAAAEAAAAYAPv/AAAAAAEAAAAYAPn/AAAAAAEAAAAYAPf/AAAAAAEAAAAYAPX/AAAAAAEAAAA=")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_wb0lr")]
 position = Vector2(-71, 8)
@@ -23,3 +25,10 @@ position = Vector2(160, 32)
 position = Vector2(-171, -70)
 mass = 2.5
 lock_rotation = true
+
+[node name="Area2D" parent="." instance=ExtResource("5_7ot2a")]
+position = Vector2(360, 8)
+metadata/levelOrPos = true
+
+[node name="Lever" parent="." instance=ExtResource("6_7gbal")]
+position = Vector2(256, 14)
