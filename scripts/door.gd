@@ -6,7 +6,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if(not body.is_class("CharacterBody2D")):
 		return
 	$AnimatedSprite2D.visible = true
-	$Sprite2D.texture = load("res://assets/door2.png")
+	$Sprite2D.texture = load("res://assets/textures/door2.png")
 	accepting = true
 
 func _process(_delta: float) -> void:

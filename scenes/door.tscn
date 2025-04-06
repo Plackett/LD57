@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://c5b12oi2g6knw"]
 
-[ext_resource type="Script" uid="uid://dm5syksb47iki" path="res://scenes/door.gd" id="1_hpvv5"]
-[ext_resource type="Texture2D" uid="uid://dfil41g2r1gmy" path="res://assets/door1.png" id="2_83dcw"]
-[ext_resource type="Texture2D" uid="uid://bxl4c32ace6as" path="res://assets/arrow.png" id="2_uvdjg"]
-[ext_resource type="AudioStream" uid="uid://cpr44xypwwt8t" path="res://assets/openDoor.wav" id="4_la1wf"]
+[ext_resource type="Script" uid="uid://dm5syksb47iki" path="res://scripts/door.gd" id="1_hpvv5"]
+[ext_resource type="Texture2D" uid="uid://bshx57wq4dx5s" path="res://assets/textures/door1.png" id="2_83dcw"]
+[ext_resource type="Texture2D" uid="uid://b80peqguggkh4" path="res://assets/textures/arrow.png" id="2_uvdjg"]
+[ext_resource type="AudioStream" uid="uid://ncqmeqm5oq6t" path="res://assets/sfx/openDoor.wav" id="4_la1wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1ysn"]
 size = Vector2(30, 54)

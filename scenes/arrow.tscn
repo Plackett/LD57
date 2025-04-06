@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdu11rvsu2c71"]
 
-[ext_resource type="Script" uid="uid://d3s1kt5u6durn" path="res://scenes/arrow.gd" id="1_23jat"]
+[ext_resource type="Script" uid="uid://d3s1kt5u6durn" path="res://scripts/arrow.gd" id="1_23jat"]
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_umosx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23jat"]

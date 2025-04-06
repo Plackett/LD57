@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_rerym"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_uijja"]
 [ext_resource type="PackedScene" uid="uid://c5b12oi2g6knw" path="res://scenes/door.tscn" id="4_uijja"]
-[ext_resource type="Texture2D" uid="uid://c8md1eec3bc1x" path="res://assets/templebottom1.png" id="5_xp8tn"]
-[ext_resource type="Texture2D" uid="uid://dqmeiib4whhso" path="res://assets/templebottom2.png" id="6_rhhhf"]
+[ext_resource type="Texture2D" uid="uid://duhvmkg2akdrk" path="res://assets/textures/templebottom1.png" id="5_xp8tn"]
+[ext_resource type="Texture2D" uid="uid://b7pcbohaeq1fd" path="res://assets/textures/templebottom2.png" id="6_rhhhf"]
 [ext_resource type="PackedScene" uid="uid://dbe03ote7nom3" path="res://scenes/pushblock.tscn" id="6_xp8tn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]

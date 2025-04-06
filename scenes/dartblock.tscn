@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8ewjicq6e0j5"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_e5eh6"]
-[ext_resource type="Script" uid="uid://cx40m3j3x0gfp" path="res://scenes/dartblock.gd" id="1_i665g"]
+[ext_resource type="Script" uid="uid://cx40m3j3x0gfp" path="res://scripts/dartblock.gd" id="1_i665g"]
 [ext_resource type="PackedScene" uid="uid://bdu11rvsu2c71" path="res://scenes/arrow.tscn" id="2_yc5hx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yc5hx"]

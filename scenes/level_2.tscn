@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://dhnxx88e07hdr"]
+[gd_scene load_steps=10 format=4 uid="uid://dhnxx88e07hdr"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_pbc48"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://c5b12oi2g6knw" path="res://scenes/door.tscn" id="3_b4j7a"]
 [ext_resource type="PackedScene" uid="uid://c8ewjicq6e0j5" path="res://scenes/dartblock.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://dcwfh7rh1aiyj" path="res://scenes/puzzlegate.tscn" id="5_b4j7a"]
+[ext_resource type="Script" uid="uid://bhkycjs3nhs7e" path="res://scripts/gate.gd" id="6_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://c7fnnaix3ebw" path="res://scenes/Lever.tscn" id="6_wo48x"]
-[ext_resource type="Script" uid="uid://cp2xvjd21fm8j" path="res://scenes/gravity_switch.gd" id="7_y0kc7"]
+[ext_resource type="Script" uid="uid://cp2xvjd21fm8j" path="res://scripts/gravity_switch.gd" id="7_y0kc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0kc7"]
 size = Vector2(19, 32)
@@ -33,6 +34,7 @@ position = Vector2(104, -21)
 
 [node name="PuzzleGate" parent="." instance=ExtResource("5_b4j7a")]
 position = Vector2(462, -88)
+script = ExtResource("6_ne2mo")
 
 [node name="Lever" parent="." instance=ExtResource("6_wo48x")]
 position = Vector2(510, -40)

@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxhwykm84q65u"
-valid=false
+uid="uid://duhvmkg2akdrk"
+path="res://.godot/imported/templebottom1.png-ba2ecd52faf91ea49250a8c1cbe5c8fb.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/IMG_1177.png"
+source_file="res://assets/textures/templebottom1.png"
+dest_files=["res://.godot/imported/templebottom1.png-ba2ecd52faf91ea49250a8c1cbe5c8fb.ctex"]
 
 [params]
 
