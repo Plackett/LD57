@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ewjicq6e0j5"]
+[gd_scene load_steps=4 format=3 uid="uid://c8ewjicq6e0j5"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_e5eh6"]
+[ext_resource type="Script" uid="uid://cx40m3j3x0gfp" path="res://scenes/dartblock.gd" id="1_i665g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i665g"]
 size = Vector2(32, 32)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="PushDartBlock" type="RigidBody2D"]
 lock_rotation = true
+script = ExtResource("1_i665g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -9)
