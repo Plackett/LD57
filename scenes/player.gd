@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 250.0
 const JUMP_VELOCITY = -370.0
 
+@onready var _animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 # Reference to the timer
 @onready var jump_height_timer = $JumpHeightTimer
 
@@ -40,7 +42,29 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	# Get the input direction: -1, 0, 1
+	var direction = Input.get_axis("ui_left", "ui_right")
+	
+	# Flip the sprite
+	if direction > 0:
+		_animated_sprite.flip_h = false
+	elif direction < 0:
+		_animated_sprite.flip_h = true
+		
+		# Play animations
+		if is_on_floor():
+			if direction == 0:
+				_animated_sprite.play("Idle")
+				print("Idle")
+			else:
+				_animated_sprite.play("Walk")
+				print("Walk")
+		else:
+			_animated_sprite.play("Jump")
+			print("Jump")
+		
+		
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:

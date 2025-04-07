@@ -1,9 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://b706nn3irhgg"]
+[gd_scene load_steps=7 format=3 uid="uid://b706nn3irhgg"]
 
 [ext_resource type="Script" uid="uid://duqtf5yoivxm8" path="res://scenes/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://buwj7em0xhxwx" path="res://icon.svg" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://nqle2rlttgv0" path="res://assets/player1.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://detl4krk54vfv" path="res://assets/player2.png" id="4_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://w26jm2ess0lk" path="res://assets/player3.png" id="5_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smehm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qlg0r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tuyoq")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fjrip")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
@@ -13,13 +45,14 @@ texture_filter = 1
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_u8vuu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.124994, -10.125)
-scale = Vector2(0.158203, 0.158203)
-texture = ExtResource("2_g2els")
-
 [node name="JumpHeightTimer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11.9063)
+scale = Vector2(0.73877, 0.744141)
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"Idle"
 
 [connection signal="timeout" from="JumpHeightTimer" to="." method="_on_jump_height_timer_timeout"]
