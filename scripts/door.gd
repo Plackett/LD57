@@ -17,7 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 func loadState(newState: int):
 	$Sprite2D.texture = load(sprites[newState])
 	state = newState
-	print("Successfully set texture!") 
 
 func _process(_delta: float) -> void:
 	if not accepting or state == 0: return

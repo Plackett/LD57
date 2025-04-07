@@ -31,17 +31,15 @@ func _ready() -> void:
 		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
 		var json_text = file.get_as_text()
 		file.close()
-		var error = json.parse(json_text)
-		if error == OK:
-			var data_received = json.data
-			if typeof(data_received) == TYPE_DICTIONARY:
-				_updateDoors(data_received["levelStates"])
-				_initLeaderBoard(data_received["bestTimes"])
-				return
-			else:
-				print("Corrupted Data, resetting save data...")
+		json.parse(json_text)
+		var data_received = json.data
+		if typeof(data_received) == TYPE_DICTIONARY:
+			_updateDoors(data_received["levelStates"])
+			_initLeaderBoard(data_received["bestTimes"])
+			return
 		else:
-			print("Failed to parse save file, resetting save data...")
+			print("Corrupted Data, resetting save data...")
+			print("RAW CORRUPTED SAVE DUMP: " + json_text)
 	else:
 		print("No save file found, creating new save...")
 	var defaultStates = [1, 0, 0, 0, 0]
