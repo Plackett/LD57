@@ -23,7 +23,9 @@ func _process(_delta: float) -> void:
 	if not accepting or state == 0: return
 	if not Input.is_action_pressed("ui_up"): return
 	if get_meta("levelOrPos") == true:
-		if exit: get_node(stopwatch)._stop()
+		if exit: 
+			get_node(stopwatch)._stop()
+			PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
 		get_tree().change_scene_to_file(get_meta("newScene"))
 		return
 	get_tree().get_first_node_in_group("Player").global_position = get_meta("dest")

@@ -15,6 +15,10 @@ run/main_scene="uid://kxd12jgduqgt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/aspect="keep_height"
+
 [global_group]
 
 LeverTrigger=""

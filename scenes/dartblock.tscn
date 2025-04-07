@@ -7,8 +7,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yc5hx"]
 friction = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i665g"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yc5hx"]
+radius = 16.0
+height = 34.0
 
 [node name="PushDartBlock" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_yc5hx")
@@ -18,7 +19,7 @@ arrow = ExtResource("2_yc5hx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -9)
-shape = SubResource("RectangleShape2D_i665g")
+shape = SubResource("CapsuleShape2D_yc5hx")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_e5eh6")]
 position = Vector2(-2, -17)
