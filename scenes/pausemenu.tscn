@@ -1,10 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx8c26701m807"]
+[gd_scene load_steps=6 format=3 uid="uid://cx8c26701m807"]
 
 [ext_resource type="Script" uid="uid://ctbs7bjhu15fi" path="res://scripts/Toggle.gd" id="1_3otxd"]
 [ext_resource type="Script" uid="uid://b8io6nk66duag" path="res://scripts/die.gd" id="2_r33we"]
+[ext_resource type="Texture2D" uid="uid://c3irdkividj3w" path="res://assets/textures/ui.png" id="3_8ljkb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpyy4"]
+texture = ExtResource("3_8ljkb")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eptsf"]
+sources/0 = SubResource("TileSetAtlasSource_vpyy4")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_r33we")
+
+[node name="Button3" type="Button" parent="."]
+process_mode = 3
+offset_left = 85.0
+offset_top = 16.0
+offset_right = 136.0
+offset_bottom = 69.0
+
+[node name="Button4" type="Button" parent="."]
+process_mode = 3
+offset_left = 144.0
+offset_top = 15.0
+offset_right = 197.0
+offset_bottom = 71.0
+scale = Vector2(0.96, 0.971014)
 
 [node name="MenuBar" type="MenuBar" parent="."]
 offset_left = 788.0
@@ -14,22 +42,27 @@ offset_bottom = 57.0
 
 [node name="Button" type="Button" parent="MenuBar" node_paths=PackedStringArray("menu", "menu2")]
 layout_mode = 0
-offset_left = 263.0
-offset_top = 9.0
-offset_right = 356.0
-offset_bottom = 54.0
-text = "Pause"
+offset_left = 293.0
+offset_top = 16.0
+offset_right = 353.0
+offset_bottom = 61.0
 script = ExtResource("1_3otxd")
 menu = NodePath("..")
 menu2 = NodePath("../../MenuBar2")
 
 [node name="Button2" type="Button" parent="MenuBar"]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 9.0
-offset_right = 249.0
-offset_bottom = 54.0
-text = "Restart"
+offset_left = 176.0
+offset_top = 18.0
+offset_right = 234.0
+offset_bottom = 63.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="MenuBar"]
+texture_filter = 1
+position = Vector2(-766, 10)
+scale = Vector2(3.68, 3.68)
+tile_map_data = PackedByteArray(0, 0, 18, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 16, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_eptsf")
 
 [node name="MenuBar2" type="MenuBar" parent="."]
 process_mode = 2
@@ -39,27 +72,19 @@ offset_top = 135.0
 offset_right = 909.0
 offset_bottom = 454.0
 
-[node name="Button" type="Button" parent="MenuBar2"]
-layout_mode = 0
-offset_right = 273.0
-offset_bottom = 91.0
-text = "Volume Up"
-
-[node name="Button2" type="Button" parent="MenuBar2"]
-layout_mode = 0
-offset_left = 403.0
-offset_top = -2.0
-offset_right = 676.0
-offset_bottom = 89.0
-text = "Volume Down"
-
 [node name="Button3" type="Button" parent="MenuBar2"]
 layout_mode = 0
-offset_left = 236.0
-offset_top = 126.0
-offset_right = 444.0
-offset_bottom = 218.0
-text = "Resume"
+offset_left = 319.0
+offset_top = 170.0
+offset_right = 374.0
+offset_bottom = 226.0
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="MenuBar2"]
+texture_filter = 1
+position = Vector2(-214, -126)
+scale = Vector2(3.68, 3.68)
+tile_map_data = PackedByteArray(0, 0, 9, 0, 5, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_eptsf")
 
 [connection signal="pressed" from="MenuBar/Button" to="MenuBar/Button" method="_on_pressed"]
 [connection signal="pressed" from="MenuBar/Button2" to="." method="_on_button_2_pressed"]
