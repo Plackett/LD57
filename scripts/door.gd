@@ -6,16 +6,21 @@ var accepting = false
 @export var stopwatch : NodePath
 @export var exit = false
 
-var sprites = ["res://assets/textures/door_locked.png","res://assets/textures/door1.png","res://assets/textures/door_completed.png"]
-
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_class("CharacterBody2D") or state == 0: return
 	$AnimatedSprite2D.visible = true
-	if state == 1: $Sprite2D.texture = load("res://assets/textures/door2.png")
+	if state == 1:
+		$open.visible = true
+		$normal.visible = false
 	accepting = true
 
 func loadState(newState: int):
-	$Sprite2D.texture = load(sprites[newState])
+	if newState == 2: 
+		$open.visible = true
+		$normal.visible = false
+	if newState == 0: 
+		$locked.visible = true
+		$normal.visible = false
 	state = newState
 
 func _process(_delta: float) -> void:
@@ -33,5 +38,7 @@ func _process(_delta: float) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if not body.is_class("CharacterBody2D") or state == 0: return
 	$AnimatedSprite2D.visible = false
-	if state == 1: $Sprite2D.texture = load("res://assets/textures/door1.png")
+	if state == 1:
+		$open.visible = false
+		$normal.visible = true
 	accepting = false

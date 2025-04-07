@@ -1,12 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://c5b12oi2g6knw"]
+[gd_scene load_steps=26 format=3 uid="uid://c5b12oi2g6knw"]
 
 [ext_resource type="Script" uid="uid://dm5syksb47iki" path="res://scripts/door.gd" id="1_hpvv5"]
-[ext_resource type="Texture2D" uid="uid://bshx57wq4dx5s" path="res://assets/textures/door1.png" id="2_83dcw"]
 [ext_resource type="Texture2D" uid="uid://b80peqguggkh4" path="res://assets/textures/arrow.png" id="2_uvdjg"]
+[ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="4_18pbm"]
 [ext_resource type="AudioStream" uid="uid://ncqmeqm5oq6t" path="res://assets/sfx/openDoor.wav" id="4_la1wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1ysn"]
-size = Vector2(30, 54)
+size = Vector2(32, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la1wf"]
+size = Vector2(31.5, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83dcw"]
 atlas = ExtResource("2_uvdjg")
@@ -149,33 +152,49 @@ metadata/levelOrPos = false
 metadata/dest = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -27)
+position = Vector2(8, -39.5)
 shape = SubResource("RectangleShape2D_s1ysn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(1, -26)
-texture = ExtResource("2_83dcw")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_la1wf")
+volume_db = -5.9
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8.25, -40)
+shape = SubResource("RectangleShape2D_la1wf")
+
+[node name="normal" parent="." instance=ExtResource("4_18pbm")]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 8, 0, 2, 0, 0, 0)
+
+[node name="open" parent="." instance=ExtResource("4_18pbm")]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 9, 0, 2, 0, 0, 0)
+
+[node name="locked" parent="." instance=ExtResource("4_18pbm")]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 7, 0, 2, 0, 0, 0)
+
+[node name="level" parent="." instance=ExtResource("4_18pbm")]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 10, 0, 2, 0, 0, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
-position = Vector2(4.76837e-07, -46)
+position = Vector2(8, -62)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_uvdjg")
 autoplay = "default"
-frame = 1
-frame_progress = 0.161778
+frame_progress = 0.280809
 
 [node name="highscore" type="RichTextLabel" parent="AnimatedSprite2D"]
 offset_left = -30.4
 offset_top = -35.2
 offset_right = 38.6
 offset_bottom = -11.2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_la1wf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

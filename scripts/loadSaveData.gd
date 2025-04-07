@@ -23,7 +23,7 @@ func _updateDoors(data: Array):
 func _initLeaderBoard(data: Array):
 	for n in range(5):
 		if data[n] != -1:
-			get_node(doors[n]).AnimatedSprite2D.highscore.text = formatTime(data[n])
+			get_node(doors[n]).get_child(7).get_child(0).text = formatTime(data[n])
 
 func _ready() -> void:
 	var json = JSON.new()

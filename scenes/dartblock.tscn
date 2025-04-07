@@ -1,26 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8ewjicq6e0j5"]
+[gd_scene load_steps=8 format=3 uid="uid://c8ewjicq6e0j5"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_e5eh6"]
 [ext_resource type="Script" uid="uid://cx40m3j3x0gfp" path="res://scripts/dartblock.gd" id="1_i665g"]
 [ext_resource type="PackedScene" uid="uid://bdu11rvsu2c71" path="res://scenes/arrow.tscn" id="2_yc5hx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yc5hx"]
-friction = 0.0
+friction = 0.24
+bounce = 0.28
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yc5hx"]
-radius = 16.0
-height = 34.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc5hx"]
+size = Vector2(20, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bekbw"]
+radius = 4.12311
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5twum"]
+size = Vector2(4, 20)
 
 [node name="PushDartBlock" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_yc5hx")
 lock_rotation = true
 script = ExtResource("1_i665g")
 arrow = ExtResource("2_yc5hx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, -9)
-shape = SubResource("CapsuleShape2D_yc5hx")
-
 [node name="TileMapLayer" parent="." instance=ExtResource("1_e5eh6")]
 position = Vector2(-2, -17)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -9)
+shape = SubResource("RectangleShape2D_yc5hx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -19)
+shape = SubResource("CircleShape2D_bekbw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(16, -19)
+shape = SubResource("CircleShape2D_bekbw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 1)
+shape = SubResource("CircleShape2D_bekbw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(16, 1)
+shape = SubResource("CircleShape2D_bekbw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -9)
+shape = SubResource("RectangleShape2D_5twum")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(18, -9)
+shape = SubResource("RectangleShape2D_5twum")

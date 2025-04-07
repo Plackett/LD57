@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_umosx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23jat"]
-size = Vector2(32, 32)
+size = Vector2(32, 12)
 
 [node name="Area2D" type="Area2D" groups=["LeverTrigger"]]
 script = ExtResource("1_23jat")
@@ -16,3 +16,6 @@ shape = SubResource("RectangleShape2D_23jat")
 [node name="TileMapLayer" parent="." instance=ExtResource("1_umosx")]
 position = Vector2(-34, -22)
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

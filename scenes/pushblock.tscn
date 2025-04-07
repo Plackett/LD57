@@ -1,17 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbe03ote7nom3"]
+[gd_scene load_steps=6 format=3 uid="uid://dbe03ote7nom3"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_4ojwn"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ojwn"]
-radius = 16.0
-height = 34.0
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ojwn"]
+friction = 0.68
+bounce = 0.3
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ojwn"]
+size = Vector2(20, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_apesn"]
+radius = 4.12311
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccwpd"]
+size = Vector2(4, 20)
 
 [node name="Pushblock" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+mass = 2.39
+physics_material_override = SubResource("PhysicsMaterial_4ojwn")
 lock_rotation = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, -8)
-shape = SubResource("CapsuleShape2D_4ojwn")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_4ojwn")]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_4ojwn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -18)
+shape = SubResource("CircleShape2D_apesn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(18, -18)
+shape = SubResource("CircleShape2D_apesn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_apesn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(18, 2)
+shape = SubResource("CircleShape2D_apesn")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -8)
+shape = SubResource("RectangleShape2D_ccwpd")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(20, -8)
+shape = SubResource("RectangleShape2D_ccwpd")
