@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dgkuivsjexv6p"]
+[gd_scene load_steps=10 format=4 uid="uid://dgkuivsjexv6p"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_wcwf6"]
 [ext_resource type="PackedScene" uid="uid://dbe03ote7nom3" path="res://scenes/pushblock.tscn" id="2_tbt7t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cp2xvjd21fm8j" path="res://scripts/gravity_switch.gd" id="5_ij176"]
 [ext_resource type="PackedScene" uid="uid://cv2nj7qkjhsgt" path="res://scenes/timer.tscn" id="6_ak5vt"]
 [ext_resource type="Script" uid="uid://jf4qcotxkjy0" path="res://scenes/gravity_switch2.gd" id="6_uva14"]
+[ext_resource type="PackedScene" uid="uid://cx8c26701m807" path="res://scenes/pausemenu.tscn" id="8_uva14"]
 
 [node name="level_5" type="Node2D"]
 
@@ -51,6 +52,10 @@ metadata/levelOrPos = true
 position = Vector2(866, 53)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Node2D" parent="CharacterBody2D/Camera2D" node_paths=PackedStringArray("player") instance=ExtResource("8_uva14")]
+position = Vector2(-576, -325)
+player = NodePath("../..")
 
 [node name="Timer" parent="." instance=ExtResource("6_ak5vt")]
 index = 4

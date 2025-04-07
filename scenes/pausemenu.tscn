@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx8c26701m807"]
+
+[ext_resource type="Script" uid="uid://ctbs7bjhu15fi" path="res://scripts/Toggle.gd" id="1_3otxd"]
+[ext_resource type="Script" uid="uid://b8io6nk66duag" path="res://scripts/die.gd" id="2_r33we"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_r33we")
+
+[node name="MenuBar" type="MenuBar" parent="."]
+offset_left = 788.0
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 57.0
+
+[node name="Button" type="Button" parent="MenuBar" node_paths=PackedStringArray("menu", "menu2")]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 9.0
+offset_right = 356.0
+offset_bottom = 54.0
+text = "Pause"
+script = ExtResource("1_3otxd")
+menu = NodePath("..")
+menu2 = NodePath("../../MenuBar2")
+
+[node name="Button2" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 9.0
+offset_right = 249.0
+offset_bottom = 54.0
+text = "Restart"
+
+[node name="MenuBar2" type="MenuBar" parent="."]
+process_mode = 2
+visible = false
+offset_left = 236.0
+offset_top = 135.0
+offset_right = 909.0
+offset_bottom = 454.0
+
+[node name="Button" type="Button" parent="MenuBar2"]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 91.0
+text = "Volume Up"
+
+[node name="Button2" type="Button" parent="MenuBar2"]
+layout_mode = 0
+offset_left = 403.0
+offset_top = -2.0
+offset_right = 676.0
+offset_bottom = 89.0
+text = "Volume Down"
+
+[node name="Button3" type="Button" parent="MenuBar2"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 126.0
+offset_right = 444.0
+offset_bottom = 218.0
+text = "Resume"
+
+[connection signal="pressed" from="MenuBar/Button" to="MenuBar/Button" method="_on_pressed"]
+[connection signal="pressed" from="MenuBar/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MenuBar2/Button3" to="MenuBar/Button" method="_on_button_3_pressed"]

@@ -20,14 +20,15 @@ func _on_jump_height_timer_timeout():
 
 
 # This represents the player's inertia.
-var push_force = 80.0
+var push_force = 1000
 
 func _apply_impulses():
 	# after calling move_and_slide()
+	if get_slide_collision_count() <= 0: return
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+			c.get_collider().apply_force(c.get_normal() * -push_force)
 
 
 func _physics_process(delta: float) -> void:

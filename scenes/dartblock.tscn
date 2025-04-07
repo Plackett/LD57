@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bdu11rvsu2c71" path="res://scenes/arrow.tscn" id="2_yc5hx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yc5hx"]
-friction = 0.24
+friction = 0.0
 bounce = 0.28
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc5hx"]
-size = Vector2(20, 28)
+size = Vector2(20, 23)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bekbw"]
 radius = 4.12311
@@ -30,7 +30,7 @@ position = Vector2(-2, -17)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, -9)
+position = Vector2(6, -10.5)
 shape = SubResource("RectangleShape2D_yc5hx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

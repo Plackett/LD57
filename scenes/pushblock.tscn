@@ -8,7 +8,7 @@ bounce = 0.3
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ojwn"]
-size = Vector2(20, 28)
+size = Vector2(20, 23)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_apesn"]
 radius = 4.12311
@@ -16,18 +16,18 @@ radius = 4.12311
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccwpd"]
 size = Vector2(4, 20)
 
-[node name="Pushblock" type="RigidBody2D"]
+[node name="Pushblock" type="RigidBody2D" groups=["LeverTrigger"]]
 collision_layer = 3
 collision_mask = 3
-mass = 2.39
 physics_material_override = SubResource("PhysicsMaterial_4ojwn")
+can_sleep = false
 lock_rotation = true
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_4ojwn")]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, -8)
+position = Vector2(8, -9.5)
 shape = SubResource("RectangleShape2D_4ojwn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

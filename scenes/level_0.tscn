@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://kxd12jgduqgt"]
+[gd_scene load_steps=12 format=4 uid="uid://kxd12jgduqgt"]
 
 [ext_resource type="Script" uid="uid://cc2q4ke48hwae" path="res://scripts/loadSaveData.gd" id="1_jv3i5"]
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_rerym"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dbe03ote7nom3" path="res://scenes/pushblock.tscn" id="6_xp8tn"]
 [ext_resource type="AudioStream" uid="uid://byebpic6el43y" path="res://assets/bgm/bgm-1.wav" id="7_qjcqe"]
 [ext_resource type="Script" uid="uid://b4ogdc0c4upb8" path="res://scripts/loop.gd" id="8_jv3i5"]
+[ext_resource type="PackedScene" uid="uid://cx8c26701m807" path="res://scenes/pausemenu.tscn" id="10_ll25s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
 size = Vector2(319, 260)
@@ -90,10 +91,15 @@ stream = ExtResource("7_qjcqe")
 autoplay = true
 script = ExtResource("8_jv3i5")
 
-[node name="CharacterBody2D2" parent="." groups=["Player"] instance=ExtResource("2_uijja")]
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_uijja")]
 position = Vector2(-50, 4)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
 zoom = Vector2(2, 2)
+
+[node name="Node2D" parent="CharacterBody2D2/Camera2D" node_paths=PackedStringArray("player") instance=ExtResource("10_ll25s")]
+position = Vector2(-290, -160)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../..")
 
 [connection signal="finished" from="Bgm-1" to="Bgm-1" method="_on_finished"]

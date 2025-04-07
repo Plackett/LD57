@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d084nopmshyjt"]
+[gd_scene load_steps=11 format=4 uid="uid://d084nopmshyjt"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_p6vls"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_hhfj6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ewjicq6e0j5" path="res://scenes/dartblock.tscn" id="6_56dhn"]
 [ext_resource type="PackedScene" uid="uid://cv2nj7qkjhsgt" path="res://scenes/timer.tscn" id="7_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://brep2dkelo3hm" path="res://scenes/bgm'.tscn" id="8_wae8j"]
+[ext_resource type="PackedScene" uid="uid://cx8c26701m807" path="res://scenes/pausemenu.tscn" id="9_ha73p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhfj6"]
 size = Vector2(26, 126)
@@ -53,3 +54,8 @@ position = Vector2(118, 39)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="Node2D" parent="CharacterBody2D/Camera2D" node_paths=PackedStringArray("player") instance=ExtResource("9_ha73p")]
+position = Vector2(-381, -214)
+scale = Vector2(0.66, 0.66)
+player = NodePath("../..")

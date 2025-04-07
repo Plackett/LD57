@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dhnxx88e07hdr"]
+[gd_scene load_steps=11 format=4 uid="uid://dhnxx88e07hdr"]
 
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_pbc48"]
 [ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="2_eqxsl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cp2xvjd21fm8j" path="res://scripts/gravity_switch.gd" id="7_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://cv2nj7qkjhsgt" path="res://scenes/timer.tscn" id="9_6cvei"]
 [ext_resource type="PackedScene" uid="uid://brep2dkelo3hm" path="res://scenes/bgm'.tscn" id="9_que50"]
+[ext_resource type="PackedScene" uid="uid://cx8c26701m807" path="res://scenes/pausemenu.tscn" id="10_que50"]
 
 [node name="level_2" type="Node2D"]
 
@@ -54,3 +55,8 @@ position = Vector2(16, -6)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
+
+[node name="Node2D" parent="CharacterBody2D/Camera2D" node_paths=PackedStringArray("player") instance=ExtResource("10_que50")]
+position = Vector2(-286, -162)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../..")

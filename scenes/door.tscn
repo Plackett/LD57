@@ -183,6 +183,7 @@ visible = false
 tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 10, 0, 2, 0, 0, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(8, -62)
 scale = Vector2(0.625, 0.625)
