@@ -168,6 +168,12 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.161778
 
+[node name="highscore" type="RichTextLabel" parent="AnimatedSprite2D"]
+offset_left = -30.4
+offset_top = -35.2
+offset_right = 38.6
+offset_bottom = -11.2
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_la1wf")
 
