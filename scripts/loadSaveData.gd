@@ -1,7 +1,7 @@
 extends Node2D
 
 var FILE_PATH = "user://lsb.lk"
-
+'''
 @export var doors : Array
 
 func formatTime(milliseconds: int) -> String:
@@ -55,3 +55,4 @@ func _ready() -> void:
 	save_file.close()
 	_updateDoors(defaultStates)
 	_initLeaderBoard(defaultTimes)
+'''

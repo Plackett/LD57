@@ -159,7 +159,6 @@ animations = [{
 
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_jv3i5")
-doors = [NodePath("Area2D3"), NodePath("Area2D3"), NodePath("Area2D3"), NodePath("Area2D4"), NodePath("Area2D5")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -181,21 +180,25 @@ metadata/levelOrPos = true
 
 [node name="Area2D4" parent="." instance=ExtResource("4_uijja")]
 position = Vector2(662, 352)
+state = 0
 metadata/newScene = "res://scenes/level_2.tscn"
 metadata/levelOrPos = true
 
 [node name="Area2D5" parent="." instance=ExtResource("4_uijja")]
 position = Vector2(600, 352)
+state = 0
 metadata/newScene = "res://scenes/level_3.tscn"
 metadata/levelOrPos = true
 
 [node name="Area2D6" parent="." instance=ExtResource("4_uijja")]
 position = Vector2(533, 480)
+state = 0
 metadata/newScene = "res://scenes/level_4.tscn"
 metadata/levelOrPos = true
 
 [node name="Area2D7" parent="." instance=ExtResource("4_uijja")]
 position = Vector2(688, 480)
+state = 0
 metadata/newScene = "res://scenes/level_5.tscn"
 metadata/levelOrPos = true
 
