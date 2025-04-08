@@ -25,3 +25,4 @@ func _level_check(): # For debugging
 		get_node(get_meta("result")).deactivate()
 		$TileMapLayer.enabled = true
 		$TileMapLayer2.enabled = false
+	$AudioStreamPlayer2D.play()

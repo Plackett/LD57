@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if timeAlive > 8: queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"): body.die()
+	if body.is_in_group("Player"): body.loseHeart()
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"): area.die()
+	if area.is_in_group("Player"): area.loseHeart()

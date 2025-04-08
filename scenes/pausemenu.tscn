@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx8c26701m807"]
+[gd_scene load_steps=9 format=3 uid="uid://cx8c26701m807"]
 
 [ext_resource type="Script" uid="uid://ctbs7bjhu15fi" path="res://scripts/Toggle.gd" id="1_3otxd"]
 [ext_resource type="Script" uid="uid://b8io6nk66duag" path="res://scripts/die.gd" id="2_r33we"]
 [ext_resource type="Script" uid="uid://civlcg7l6ppnw" path="res://scripts/volumeup.gd" id="2_vpyy4"]
 [ext_resource type="Texture2D" uid="uid://c3irdkividj3w" path="res://assets/textures/ui.png" id="3_8ljkb"]
 [ext_resource type="Script" uid="uid://bqoobqtm7mdc6" path="res://scripts/volumedown.gd" id="3_eptsf"]
+[ext_resource type="Texture2D" uid="uid://c0u4btmglabjx" path="res://assets/textures/heart.png" id="6_alvrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpyy4"]
 texture = ExtResource("3_8ljkb")
@@ -89,6 +90,24 @@ position = Vector2(-214, -126)
 scale = Vector2(3.68, 3.68)
 tile_map_data = PackedByteArray(0, 0, 9, 0, 5, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_eptsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(494, 43)
+scale = Vector2(2.52734, 2.52734)
+texture = ExtResource("6_alvrn")
+
+[node name="HeartTwo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(562, 43)
+scale = Vector2(2.52734, 2.52734)
+texture = ExtResource("6_alvrn")
+
+[node name="HeartOne" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(632, 43)
+scale = Vector2(2.52734, 2.52734)
+texture = ExtResource("6_alvrn")
 
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
 [connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]

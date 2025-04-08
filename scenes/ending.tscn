@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://de5xudqefdipm"]
+[gd_scene load_steps=9 format=3 uid="uid://de5xudqefdipm"]
 
 [ext_resource type="Script" uid="uid://cdj8g677jephb" path="res://loadHighScores.gd" id="1_mqjok"]
 [ext_resource type="Script" uid="uid://dpge8nb4gk8da" path="res://scripts/resetHighScores.gd" id="2_fyrdv"]
@@ -6,24 +6,35 @@
 [ext_resource type="Script" uid="uid://dh7ru42qwwr" path="res://scripts/gotoLevelSelect.gd" id="3_qa3ag"]
 [ext_resource type="Script" uid="uid://cwk1tt6mb563t" path="res://scripts/Quit.gd" id="4_nfmnx"]
 [ext_resource type="PackedScene" uid="uid://brep2dkelo3hm" path="res://scenes/bgm'.tscn" id="6_5amew"]
+[ext_resource type="Texture2D" uid="uid://bqmhcoawu3wie" path="res://assets/textures/black.png" id="7_3v48n"]
+[ext_resource type="Texture2D" uid="uid://cgo12ej3kkdcd" path="res://assets/textures/end.png" id="8_75aq2"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(574, 356)
+texture = ExtResource("7_3v48n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(718.333, 323.5)
+scale = Vector2(0.718889, 0.718889)
+texture = ExtResource("8_75aq2")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 278.0
-offset_top = 70.0
-offset_right = 856.0
-offset_bottom = 344.0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 594.0
+offset_bottom = 288.0
 text = "You hit the bottom... CONGRATS!
 
 Post your times:"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 303.0
-offset_top = 168.0
-offset_right = 881.0
-offset_bottom = 442.0
+offset_left = 11.0
+offset_top = 186.0
+offset_right = 589.0
+offset_bottom = 460.0
 text = "Level 1:
 Level 2:
 Level 3:

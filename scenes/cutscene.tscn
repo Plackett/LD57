@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bskdomycbgt6t"]
+[gd_scene load_steps=4 format=3 uid="uid://bskdomycbgt6t"]
 
-[ext_resource type="PackedScene" uid="uid://b706nn3irhgg" path="res://scenes/player.tscn" id="1_edmg7"]
+[ext_resource type="Script" uid="uid://c3cjp056vpxyx" path="res://scripts/start.gd" id="1_edmg7"]
+[ext_resource type="Texture2D" uid="uid://bqmhcoawu3wie" path="res://assets/textures/black.png" id="2_0sipp"]
+[ext_resource type="Texture2D" uid="uid://dthyfyq2npsh2" path="res://assets/textures/start.png" id="2_a320b"]
 
 [node name="Cutscene" type="Node2D"]
+script = ExtResource("1_edmg7")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_edmg7")]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(531, 337)
+scale = Vector2(1.165, 1)
+texture = ExtResource("2_0sipp")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(3, 3)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 320.5)
+scale = Vector2(0.716667, 0.716667)
+texture = ExtResource("2_a320b")

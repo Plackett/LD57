@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b706nn3irhgg"]
+[gd_scene load_steps=16 format=3 uid="uid://b706nn3irhgg"]
 
 [ext_resource type="Script" uid="uid://duqtf5yoivxm8" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://dr6ow33wksyjt" path="res://assets/textures/player_accessibility.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://dvdirdhenluvl" path="res://assets/textures/player.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://ff302vx17uv5" path="res://assets/sfx/jump.wav" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 8.0
@@ -131,5 +132,11 @@ position = Vector2(0.133751, -11.8205)
 scale = Vector2(0.741641, 0.752464)
 sprite_frames = SubResource("SpriteFrames_smehm")
 animation = &"Walk"
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dqkch")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="timeout" from="JumpHeightTimer" to="." method="_on_jump_height_timer_timeout"]

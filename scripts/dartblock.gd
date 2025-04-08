@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 	var arrowInstance = arrow.instantiate()
 	arrowInstance.global_position = Vector2(global_position.x+10,global_position.y+10)
 	get_parent().add_child(arrowInstance)
+	$AudioStreamPlayer2D.play()
