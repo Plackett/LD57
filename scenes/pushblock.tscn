@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rjrceyv1d3dq" path="res://scenes/tile.tscn" id="1_4ojwn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ojwn"]
-friction = 0.68
+friction = 0.0
 bounce = 0.3
 absorbent = true
 
@@ -19,6 +19,7 @@ size = Vector2(4, 20)
 [node name="Pushblock" type="RigidBody2D" groups=["LeverTrigger"]]
 collision_layer = 3
 collision_mask = 3
+mass = 6.469
 physics_material_override = SubResource("PhysicsMaterial_4ojwn")
 can_sleep = false
 lock_rotation = true

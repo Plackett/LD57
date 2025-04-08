@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://de5xudqefdipm"]
+
+[ext_resource type="Script" uid="uid://cdj8g677jephb" path="res://loadHighScores.gd" id="1_mqjok"]
+[ext_resource type="Script" uid="uid://dpge8nb4gk8da" path="res://scripts/resetHighScores.gd" id="2_fyrdv"]
+[ext_resource type="Script" uid="uid://bw6i60phw471o" path="res://scripts/resetAllData.gd" id="3_2x1jc"]
+[ext_resource type="Script" uid="uid://dh7ru42qwwr" path="res://scripts/gotoLevelSelect.gd" id="3_qa3ag"]
+[ext_resource type="Script" uid="uid://cwk1tt6mb563t" path="res://scripts/Quit.gd" id="4_nfmnx"]
+[ext_resource type="PackedScene" uid="uid://brep2dkelo3hm" path="res://scenes/bgm'.tscn" id="6_5amew"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 278.0
+offset_top = 70.0
+offset_right = 856.0
+offset_bottom = 344.0
+text = "You hit the bottom... CONGRATS!
+
+Post your times:"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 303.0
+offset_top = 168.0
+offset_right = 881.0
+offset_bottom = 442.0
+text = "Level 1:
+Level 2:
+Level 3:
+Level 4:
+Level 5:"
+scroll_active = false
+script = ExtResource("1_mqjok")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 492.0
+offset_top = 472.0
+offset_right = 698.0
+offset_bottom = 529.0
+text = "Reset High Scores"
+script = ExtResource("2_fyrdv")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 69.0
+offset_top = 544.0
+offset_right = 265.0
+offset_bottom = 597.0
+text = "Back to Level Select"
+script = ExtResource("3_qa3ag")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 495.0
+offset_top = 546.0
+offset_right = 697.0
+offset_bottom = 602.0
+text = "Reset All Data"
+script = ExtResource("3_2x1jc")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 924.0
+offset_top = 532.0
+offset_right = 1089.0
+offset_bottom = 595.0
+text = "Quit"
+script = ExtResource("4_nfmnx")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("6_5amew")]
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]

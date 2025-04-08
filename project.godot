@@ -14,7 +14,7 @@ config/name="The Tomb of Mysteria"
 config/version="1.0.0-ludumdare"
 run/main_scene="uid://kxd12jgduqgt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.png"
 
 [display]
 
